@@ -671,3 +671,23 @@ def permute(self, l):
     res.extend([[e] + r for r in self.permute(temp)])
   return res
 ```
+
+#### Inorder Tree Traversal
+```python
+def inorderTraversal(self, root):
+  result, stack = [], [(root, False)]
+  while stack:
+    root, visited = stack.pop()
+    if not root:
+      continue
+    if visited:
+      result.append(root.val)
+    else:
+      if root.right:
+        stack.append((root.right, False))
+      if root:
+        stack.append((root, True))
+      if root.left:
+        stack.append((root.left, False))
+   return result
+```
