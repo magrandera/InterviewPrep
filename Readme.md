@@ -649,3 +649,12 @@ fun fib(n : N) = round(((1 + sqrt(5))/2)/sqrt(5))
 ```python
 ((n & (n-1)) == 0) and n != 0
 ```
+
+#### All subsets of a list
+```python
+def subsets(nums):
+  result = [[]]
+  for x in nums:
+    result = result + [y + [x] for y in result]
+  return result
+```
