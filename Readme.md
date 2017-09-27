@@ -658,3 +658,16 @@ def subsets(nums):
     result = result + [y + [x] for y in result]
   return result
 ```
+
+#### All permuations of a list
+```python
+def permute(self, l):
+  if not l:
+    return [[]]
+  res = []
+  for e in l:
+    temp = l[:]
+    temp.remove(e)
+    res.extend([[e] + r for r in self.permute(temp)])
+  return res
+```
